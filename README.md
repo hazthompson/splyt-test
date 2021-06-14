@@ -4,6 +4,10 @@
 
 Technical stack:
 
+## Deploy link
+
+https://quiet-reaches-82718.herokuapp.com/
+
 ### Front end
 
 - [React](https://reactjs.org/)
