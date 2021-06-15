@@ -8,9 +8,10 @@ import CurrentLocationMarker from 'components/CurrentLocationMarker';
 
 interface MapProps {
   center: centerInterface;
+  currentLocation: string;
 }
 
-function Map({ center }: MapProps) {
+function Map({ center, currentLocation }: MapProps) {
   const [zoom] = useState<number>(15);
   return (
     <div style={{ height: '100vh', width: '100%', opacity: 0.7 }}>
@@ -22,7 +23,7 @@ function Map({ center }: MapProps) {
         <CurrentLocationMarker
           lat={center.lat}
           lng={center.lng}
-          text={'My Marker'}
+          currentLocation={currentLocation}
         />
       </GoogleMapReact>
     </div>

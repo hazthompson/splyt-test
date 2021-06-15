@@ -71,7 +71,7 @@ function App() {
           Singapore
         </button>
       </div>
-      <Map center={center} />
+      <Map center={center} currentLocation={currentLocation} />
     </div>
   );
 }
