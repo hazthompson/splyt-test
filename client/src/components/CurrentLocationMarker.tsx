@@ -14,11 +14,6 @@ interface CurrentLocationMarkerProps {
 
 const currentLocationMarkerStyle = css`
   color: red;
-  .faMapPin {
-    &:hover {
-      // color: ${GlobalStyles.splytBlue};
-    }
-  }
   .currentMarkerLabel {
     &:hover {
       color: red;
@@ -41,10 +36,6 @@ function CurrentLocationMarker({
             font-size: 15px;
             margin: -20px 0 0 -35px;
             color: transparent;
-            // &:hover {
-            //   font-size: 15px;
-            //   margin: -20px 0 0 -35px;
-            // }
           `}
         >
           <span
