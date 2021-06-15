@@ -13,7 +13,6 @@ const buttonStyling = css`
   background-color: ${GlobalStyles.royalBlue};
   border-radius: ${GlobalStyles.borderRadius};
   border: none;
-  height: 35px;
   font-weight: bold;
   width: 200px;
   font-size: 20px;
