@@ -3,7 +3,6 @@
 import { css, jsx } from '@emotion/react';
 import { useEffect, useState } from 'react';
 import GlobalStyles from 'assets/GlobalStyles';
-import './App.css';
 import Map from 'pages/Map';
 import { centerInterface, taxiLocationsInterface } from 'utils/interfaces';
 
@@ -76,14 +75,19 @@ function App() {
   }
 
   return (
-    <div className='App'>
+    <div
+      className='App'
+      css={css`
+        text-align: center;
+      `}
+    >
       <div
         className='map__buttons-container'
         css={css`
           display: grid;
           grid-template-columns: 50% 50%;
           justify-items: center;
-          padding: 40px;
+          padding: 30px;
         `}
       >
         <button onClick={LocationButtonClick('London')} css={buttonStyling}>
