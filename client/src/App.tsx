@@ -4,6 +4,7 @@ import { css, jsx } from '@emotion/react';
 import { useEffect, useState } from 'react';
 import GlobalStyles from 'assets/GlobalStyles';
 import Map from 'pages/Map';
+import TaxiCounterSlider from 'components/TaxiCounterSlider';
 import { centerInterface, taxiLocationsInterface } from 'utils/interfaces';
 
 const buttonStyling = css`
@@ -29,7 +30,7 @@ function App() {
     lng: -0.0964509,
   });
   const [currentLocation, setCurrentLocation] = useState<string>('London');
-  const [count, setCount] = useState<number>(5);
+  const [currentTaxiAmount, setCurrentTaxiAmount] = useState<number>(6);
 
   const [taxiLocations, setTaxiLocations] = useState<taxiLocationsInterface>({
     pickup_eta: 1,
@@ -48,7 +49,7 @@ function App() {
   useEffect(() => {
     const getTaxiLocations = async () =>
       fetch(
-        `${process.env.REACT_APP_ACCESS_ALLOWED_PROXY}${process.env.REACT_APP_API_URL}?count=${count}&longitude=${center.lng}&latitude=${center.lat}`
+        `${process.env.REACT_APP_ACCESS_ALLOWED_PROXY}${process.env.REACT_APP_API_URL}?count=${currentTaxiAmount}&longitude=${center.lng}&latitude=${center.lat}`
       )
         .then((response) => response.json())
         .then((data) => setTaxiLocations(data));
@@ -60,7 +61,7 @@ function App() {
     }, 10000);
 
     return () => clearInterval(interval);
-  }, [count, center]);
+  }, [currentTaxiAmount, center]);
 
   useEffect(() => {
     if (currentLocation === 'London') {
@@ -79,6 +80,8 @@ function App() {
       className='App'
       css={css`
         text-align: center;
+        background-color: ${GlobalStyles.canaryYellow};
+        height: 100vh;
       `}
     >
       <div
@@ -102,6 +105,7 @@ function App() {
         currentLocation={currentLocation}
         taxiLocations={taxiLocations}
       />
+      <TaxiCounterSlider setCurrentTaxiAmount={setCurrentTaxiAmount} />
     </div>
   );
 }

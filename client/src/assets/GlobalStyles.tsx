@@ -4,7 +4,7 @@ const GlobalStyles = {
   splytBlue: '#46bddb',
   darkSalmon: '#EF946C',
   ghostWhite: '#fafaff',
-  lavenderBlue: '#e4d9ff',
+  canaryYellow: '#fff688',
 
   //fonts:
   headerFont: 'Poppins, sans-serif',
