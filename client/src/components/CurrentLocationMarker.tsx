@@ -26,8 +26,8 @@ const currentMarkerLabelStyling = css`
   margin: -10px 0 0 -25px;
   font-family: ${GlobalStyles.headerFont};
   font-size: 15px;
-  margin: -20px 0 0 -35px;
-  color: transparent;
+  margin: -20px 0 0 -45px;
+  color: red;
 `;
 
 const spanStyling = css`
@@ -38,15 +38,13 @@ function CurrentLocationMarker({
   currentLocation,
 }: CurrentLocationMarkerProps) {
   return (
-    <Fragment>
-      <div css={currentLocationMarkerStyle}>
-        <div className='currentMarkerLabel' css={currentMarkerLabelStyling}>
-          <span css={spanStyling}>Splyt</span>
-          &nbsp;{currentLocation}
-        </div>
-        <FontAwesomeIcon className='faMapPin' icon={faMapPin} size={'2x'} />
+    <div css={currentLocationMarkerStyle}>
+      <div className='currentMarkerLabel' css={currentMarkerLabelStyling}>
+        <span css={spanStyling}>Splyt</span>
+        &nbsp;{currentLocation}
       </div>
-    </Fragment>
+      <FontAwesomeIcon className='faMapPin' icon={faMapPin} size={'2x'} />
+    </div>
   );
 }
 
