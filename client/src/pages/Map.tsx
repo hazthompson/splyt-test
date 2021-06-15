@@ -30,6 +30,7 @@ function Map({ center, currentLocation, taxiLocations }: MapProps) {
         {taxiLocations.drivers.length &&
           taxiLocations.drivers.map((car) => (
             <TaxiMarker
+              key={car.driver_id}
               lat={car.location.latitude}
               lng={car.location.longitude}
               currentLocation={currentLocation}
