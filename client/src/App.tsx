@@ -45,12 +45,22 @@ function App() {
     }
   };
 
+  //run fetch for taxi locations on first render and at 10 second intervals for updated locations
   useEffect(() => {
-    fetch(
-      `${process.env.REACT_APP_ACCESS_ALLOWED_PROXY}${process.env.REACT_APP_API_URL}?count=${count}&longitude=${center.lng}&latitude=${center.lat}`
-    )
-      .then((response) => response.json())
-      .then((data) => setTaxiLocations(data));
+    const getTaxiLocations = async () =>
+      fetch(
+        `${process.env.REACT_APP_ACCESS_ALLOWED_PROXY}${process.env.REACT_APP_API_URL}?count=${count}&longitude=${center.lng}&latitude=${center.lat}`
+      )
+        .then((response) => response.json())
+        .then((data) => setTaxiLocations(data));
+
+    getTaxiLocations();
+
+    const interval = setInterval(() => {
+      getTaxiLocations();
+    }, 10000);
+
+    return () => clearInterval(interval);
   }, [count, center]);
 
   useEffect(() => {
