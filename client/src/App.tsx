@@ -30,51 +30,11 @@ function App() {
     lng: -0.0964509,
   });
   const [currentLocation, setCurrentLocation] = useState<string>('London');
+  const [count, setCount] = useState<number>(5);
 
   const [taxiLocations, setTaxiLocations] = useState<taxiLocationsInterface>({
     pickup_eta: 1,
-    drivers: [
-      {
-        driver_id: '0-v0ova78tlkr',
-        location: {
-          latitude: 51.50893831307097,
-          longitude: -0.10739206757603717,
-          bearing: 97,
-        },
-      },
-      {
-        driver_id: '1-cvbj3mq2xuv',
-        location: {
-          latitude: 51.50936110495304,
-          longitude: -0.09254957377216022,
-          bearing: 287,
-        },
-      },
-      {
-        driver_id: '2-uwbz5lx1ev',
-        location: {
-          latitude: 51.50858146340005,
-          longitude: -0.10897960141291363,
-          bearing: 156,
-        },
-      },
-      {
-        driver_id: '3-rboo8q46ewb',
-        location: {
-          latitude: 51.50956917904835,
-          longitude: -0.0800332363303673,
-          bearing: 91,
-        },
-      },
-      {
-        driver_id: '4-macgrjwwr9',
-        location: {
-          latitude: 51.50423996801862,
-          longitude: -0.08203443401949496,
-          bearing: 136,
-        },
-      },
-    ],
+    drivers: [],
   });
 
   const LocationButtonClick = (targetLocation: string) => (target: any) => {
@@ -86,10 +46,12 @@ function App() {
   };
 
   useEffect(() => {
-    fetch('/api')
+    fetch(
+      `${process.env.REACT_APP_ACCESS_ALLOWED_PROXY}${process.env.REACT_APP_API_URL}?count=${count}&longitude=${center.lng}&latitude=${center.lat}`
+    )
       .then((response) => response.json())
-      .then((data) => console.log(data));
-  }, []);
+      .then((data) => setTaxiLocations(data));
+  }, [count, center]);
 
   useEffect(() => {
     if (currentLocation === 'London') {
@@ -99,7 +61,7 @@ function App() {
     }
   }, [currentLocation]);
 
-  if (!taxiLocations) {
+  if (!taxiLocations.drivers.length) {
     return <p>Loading...</p>;
   }
 
