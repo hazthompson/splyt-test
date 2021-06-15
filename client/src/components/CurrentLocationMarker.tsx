@@ -21,30 +21,27 @@ const currentLocationMarkerStyle = css`
   }
 `;
 
+const currentMarkerLabelStyling = css`
+  width: 100%;
+  margin: -10px 0 0 -25px;
+  font-family: ${GlobalStyles.headerFont};
+  font-size: 15px;
+  margin: -20px 0 0 -35px;
+  color: transparent;
+`;
+
+const spanStyling = css`
+  font-weight: bold;
+`;
+
 function CurrentLocationMarker({
   currentLocation,
 }: CurrentLocationMarkerProps) {
   return (
     <Fragment>
       <div css={currentLocationMarkerStyle}>
-        <div
-          className='currentMarkerLabel'
-          css={css`
-            width: 100%;
-            margin: -10px 0 0 -25px;
-            font-family: ${GlobalStyles.headerFont};
-            font-size: 15px;
-            margin: -20px 0 0 -35px;
-            color: transparent;
-          `}
-        >
-          <span
-            css={css`
-              font-weight: bold;
-            `}
-          >
-            Splyt
-          </span>
+        <div className='currentMarkerLabel' css={currentMarkerLabelStyling}>
+          <span css={spanStyling}>Splyt</span>
           &nbsp;{currentLocation}
         </div>
         <FontAwesomeIcon className='faMapPin' icon={faMapPin} size={'2x'} />

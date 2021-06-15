@@ -24,6 +24,19 @@ const buttonStyling = css`
   }
 `;
 
+const appStyling = css`
+  text-align: center;
+  background-color: ${GlobalStyles.canaryYellow};
+  height: 100vh;
+`;
+
+const buttonContainerStyling = css`
+  display: grid;
+  grid-template-columns: 50% 50%;
+  justify-items: center;
+  padding: 30px;
+`;
+
 function App() {
   const [center, setCenter] = useState<centerInterface>({
     lat: 51.5049375,
@@ -76,23 +89,8 @@ function App() {
   }
 
   return (
-    <div
-      className='App'
-      css={css`
-        text-align: center;
-        background-color: ${GlobalStyles.canaryYellow};
-        height: 100vh;
-      `}
-    >
-      <div
-        className='map__buttons-container'
-        css={css`
-          display: grid;
-          grid-template-columns: 50% 50%;
-          justify-items: center;
-          padding: 30px;
-        `}
-      >
+    <div className='App' css={appStyling}>
+      <div className='map__buttons-container' css={buttonContainerStyling}>
         <button onClick={LocationButtonClick('London')} css={buttonStyling}>
           London
         </button>
