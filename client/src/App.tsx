@@ -3,7 +3,7 @@
 import { css, jsx } from '@emotion/react';
 import { useEffect, useState } from 'react';
 import GlobalStyles from 'assets/GlobalStyles';
-import Map from 'pages/Map';
+import Map from 'components/Map';
 import TaxiCounterSlider from 'components/TaxiCounterSlider';
 import { centerInterface, taxiLocationsInterface } from 'utils/interfaces';
 
