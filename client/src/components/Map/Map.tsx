@@ -4,8 +4,8 @@ import { jsx } from '@emotion/react';
 import { useState } from 'react';
 import GoogleMapReact from 'google-map-react';
 import { centerInterface, taxiLocationsInterface } from 'utils/interfaces';
-import CurrentLocationMarker from 'components/CurrentLocationMarker';
-import TaxiMarker from 'components/TaxiMarker';
+import CurrentLocationMarker from 'components/CurrentLocationMarker/CurrentLocationMarker';
+import TaxiMarker from 'components/TaxiMarker/TaxiMarker';
 
 interface MapProps {
   center: centerInterface;

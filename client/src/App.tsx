@@ -3,8 +3,8 @@
 import { css, jsx } from '@emotion/react';
 import { useEffect, useState } from 'react';
 import GlobalStyles from 'assets/GlobalStyles';
-import Map from 'components/Map';
-import TaxiCounterSlider from 'components/TaxiCounterSlider';
+import Map from 'components/Map/Map';
+import TaxiCounterSlider from 'components/TaxiCounterSlider/TaxiCounterSlider';
 import { centerInterface, taxiLocationsInterface } from 'utils/interfaces';
 
 const buttonStyling = (currentLocation: string, currentButton: string) => css`
