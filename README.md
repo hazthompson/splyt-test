@@ -1,12 +1,14 @@
 # Express React Boilerplate
 
-## Set up
-
-Technical stack:
+This app shows an interactive map, which toggles between displaying the Splyt offices in London and Singapore at the center. Surrounding the central Splyt office the nearest taxis are displayed. There is an interactive slider which allows you to choose how many taxis you can view (ranging from 2-10).
 
 ## Deploy link
 
 https://quiet-reaches-82718.herokuapp.com/
+
+## Set up
+
+Technical stack:
 
 ### Front end
 
@@ -20,9 +22,12 @@ https://quiet-reaches-82718.herokuapp.com/
 
 ## Usage
 
-### create .env file in the backend folder with the following variables (see also example.env):
+### create .env file in the client folder with the following variables (see also example.env):
 
 ```
+REACT_APP_BOOTSTRAPURLKEY=
+REACT_APP_API_URL=
+REACT_APP_ACCESS_ALLOWED_PROXY=
 
 ```
 
@@ -62,17 +67,6 @@ https://quiet-reaches-82718.herokuapp.com/
 
 1. fontend
 
-   ```bash
-   npm test
-   ```
-
-   or
-
-   ```bash
-   npm test:watch
-   ```
-
-2. backend
    ```bash
    npm test
    ```
