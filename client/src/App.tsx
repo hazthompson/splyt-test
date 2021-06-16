@@ -7,10 +7,12 @@ import Map from 'pages/Map';
 import TaxiCounterSlider from 'components/TaxiCounterSlider';
 import { centerInterface, taxiLocationsInterface } from 'utils/interfaces';
 
-const buttonStyling = css`
+const buttonStyling = (currentLocation: string, currentButton: string) => css`
   color: ${GlobalStyles.ghostWhite};
   cursor: pointer;
-  background-color: ${GlobalStyles.royalBlue};
+  background-color: ${currentLocation === currentButton
+    ? GlobalStyles.royalBlue
+    : GlobalStyles.splytBlue};
   border-radius: ${GlobalStyles.borderRadius};
   border: none;
   font-weight: bold;
@@ -18,7 +20,7 @@ const buttonStyling = css`
   font-size: 20px;
   font-family: ${GlobalStyles.headerFont};
 
-  &:hover {
+  &:active {
     color: ${GlobalStyles.splytBlue};
   }
 `;
@@ -90,10 +92,16 @@ function App() {
   return (
     <div className='App' css={appStyling}>
       <div className='map__buttons-container' css={buttonContainerStyling}>
-        <button onClick={LocationButtonClick('London')} css={buttonStyling}>
+        <button
+          onClick={LocationButtonClick('London')}
+          css={buttonStyling(currentLocation, 'London')}
+        >
           London
         </button>
-        <button onClick={LocationButtonClick('Singapore')} css={buttonStyling}>
+        <button
+          onClick={LocationButtonClick('Singapore')}
+          css={buttonStyling(currentLocation, 'Singapore')}
+        >
           Singapore
         </button>
       </div>
