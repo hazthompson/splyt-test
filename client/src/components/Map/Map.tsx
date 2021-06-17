@@ -16,7 +16,10 @@ interface MapProps {
 function Map({ center, currentLocation, taxiLocations }: MapProps) {
   const [zoom] = useState<number>(15);
   return (
-    <div style={{ height: '75vh', width: '100%', opacity: 0.85 }}>
+    <div
+      style={{ height: '75vh', width: '100%', opacity: 0.85 }}
+      data-testid='google-map-react'
+    >
       <GoogleMapReact
         bootstrapURLKeys={{ key: process.env.REACT_APP_BOOTSTRAPURLKEY! }}
         center={center}
