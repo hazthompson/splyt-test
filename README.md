@@ -33,21 +33,7 @@ REACT_APP_ACCESS_ALLOWED_PROXY=
 
 ### Run App locally
 
-1. Start the API. (Run the following commands in the root folder)
-
-   a. Install the dependencies
-
-   ```bash
-   npm install
-   ```
-
-   b. Run the HTTP server. (This will now be available at http://localhost:8000)
-
-   ```bash
-   npm start
-   ```
-
-2. Start the React app. (Run the following commands within the `client` folder)
+1. Start the React app. (Run the following commands within the `client` folder)
 
    a. Install the dependencies
 
@@ -61,7 +47,7 @@ REACT_APP_ACCESS_ALLOWED_PROXY=
    npm start
    ```
 
-3. Visit http://localhost:3000
+2. Visit http://localhost:3000
 
 ### To test
 
