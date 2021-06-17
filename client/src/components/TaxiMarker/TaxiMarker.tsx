@@ -3,7 +3,6 @@
 import { css, jsx, keyframes } from '@emotion/react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTaxi } from '@fortawesome/free-solid-svg-icons';
-import { Fragment } from 'react';
 
 const bounce = keyframes`
   from, 20%, 53%, 80%, to {
@@ -31,17 +30,15 @@ interface TaxiMarkerProps {
 
 function TaxiMarker({ currentLocation }: TaxiMarkerProps) {
   return (
-    <Fragment>
-      <div>
-        <FontAwesomeIcon
-          css={css`
-            animation: ${bounce} 1s ease infinite;
-          `}
-          icon={faTaxi}
-          size={'2x'}
-        />
-      </div>
-    </Fragment>
+    <div data-testid='taxi-marker'>
+      <FontAwesomeIcon
+        css={css`
+          animation: ${bounce} 1s ease infinite;
+        `}
+        icon={faTaxi}
+        size={'2x'}
+      />
+    </div>
   );
 }
 

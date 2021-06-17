@@ -33,3 +33,9 @@ it('renders Map component', async () => {
   const map = screen.getByTestId('google-map-react');
   expect(map).toBeInTheDocument();
 });
+
+it('renders Correct number of taxi icons', async () => {
+  render(<Map {...defaultProps} />);
+  const taxiMarkers = await screen.findAllByTestId('taxi-marker');
+  expect(taxiMarkers).toHaveLength(2);
+});
