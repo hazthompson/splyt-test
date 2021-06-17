@@ -4,7 +4,6 @@ import { css, jsx } from '@emotion/react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMapPin } from '@fortawesome/free-solid-svg-icons';
 import GlobalStyles from 'assets/GlobalStyles';
-import { Fragment } from 'react';
 
 interface CurrentLocationMarkerProps {
   currentLocation: String;
