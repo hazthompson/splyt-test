@@ -22,7 +22,7 @@ Technical stack:
 
 ## Usage
 
-### create .env file in the client folder with the following variables (see also example.env):
+### Create client/.env file in the client folder with the following variables (see also example.env):
 
 ```
 REACT_APP_BOOTSTRAPURLKEY=
@@ -38,6 +38,7 @@ REACT_APP_ACCESS_ALLOWED_PROXY=
    a. Install the dependencies
 
    ```bash
+   cd client
    npm install
    ```
 
@@ -51,8 +52,9 @@ REACT_APP_ACCESS_ALLOWED_PROXY=
 
 ### To test
 
-1. fontend
+1. Run fontend tests
 
    ```bash
+   cd client
    npm test
    ```
